@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Marcellus", serif;
+}
+
+:root {
+  --primary-color:rgb(90, 90, 90);
+  --secondary-font: "DM Sans", serif;
+}
+
+/* Subscribe Page */
+
+.subscribe-page {
+  display: grid;
+  grid-template-columns:  repeat(2,1fr);
+  .subscribe-left {
+    background: url('https://images.pexels.com/photos/236275/pexels-photo-236275.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-size: cover;
+    background-position: center;
+  }
+  .subscribe-right {
+    justify-content:  baseline;
+    align-items: center;
+    color: rgb(50, 50, 50);
+  }
+   .subscribe-head {
+      font-size: 53px;
+      max-width: 430px;
+      text-align: center;
+      line-height: 60px;
+      padding-top: 20px;
+
+     } 
+  p {
+    max-width: 490px;
+    text-align: center;
+    font-size: 18px;
+    padding: 10px 0px;
+    font-weight: 100;
+    margin-bottom: 30px;
+  }
+  .email-address {
+    position: relative;
+    .invalid-content {
+    position: absolute;
+    top: 70%;
+    left: 1%;
+    font-size: 14px;
+    }
+  }
+  input {
+    border: 1px solid rgb(0, 0, 0);
+    padding: 9px 15px;
+    width: 420px;
+    border-radius: 4px;
+    margin: 10px 0px;
+    font-size: 17px;
+  }
+  .join-button {
+    font-size: 17px;
+    padding: 10px 24px;
+    background-color:  rgb(50, 50, 50);
+    margin-top: 35px;
+    width: 150px;
+    border-radius: 4px;
+   
+     &:hover {
+      background-color: black;
+      cursor: pointer;
+     }
+  }
+}
+
+@media(max-width:1200px){
+  .subscribe-page {
+    grid-template-columns:   1fr;
+    height: auto;
+    .subscribe-left {
+      background: none;
+    }
+  }
+}
+
+
+// Header
+
+header {
+  width: 100%;
+  height: 80px;
+  padding: 0px 80px;
+  border-bottom: 1px solid rgb(222, 222, 222);
+  position: relative;
+  .header-left {
+    align-items: center;
+    img {
+      width: 60px;
+      height: 60px;
+      object-fit: cover;
+    }
+    .logo-name {
+      font-size: 19px;
+      margin-left: 8px;
+      font-weight: 600;
+    }
+  }
+  .header-right {
+    align-items: center;
+    p {
+      margin: 0px 15px;
+      cursor: pointer;
+      transition: font-weight ease-in  0.5s;
+      font-family: var(--secondary-font);
+      font-weight: 500;
+    }
+    p:hover {
+        color: rgb(85, 85, 85);
+    }
+  }
+  .nav-bar {
+     position: absolute;
+     top: 40%;
+     right: 7%;
+     cursor: pointer;
+     font-size: 27px;
+     display: none;
+  }
+}
+.header-right.active {
+  top: -500%;
+}
+
+
+@media(max-width:1137px){
+  header {
+    padding: 0px 40px;
+  }
+}
+@media(max-width:1010px){
+ header {
+ 
+   .header-right {
+    flex-direction: column;
+    background-color: rgb(207, 207, 207);
+    width: 250px;
+    height: 400px;
+    justify-content: space-around;
+    position: absolute;
+    top: 100%;
+    right: 0%;
+  
+  }
+  .nav-bar {
+     display: block;
+     transition: all 0.5s ease-in;
+  }
+ 
+ }
+}
+
+//Expert Advice Page
+
+.expertadvice-page {
+  width: 100%;
+  height: auto;
+    .head-part {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 0px;
+      height: 250px;
+        h1 {
+          font-size: 38px;
+          font-weight: 600;
+        }
+        p {
+          font-size: 17px;
+          font-family: "DM Sans", serif;
+          font-weight: 500;
+          color: var(--primary-color);
+          margin-top: -5px;
+        }
+    }
+    .second-part {
+      display: flex;
+      padding: 20px 160px;
+      height: 550px;
+      img {
+        width: 660px;
+        height: 440px;
+        object-fit: cover;
+      }
+      .second-title-part {
+        padding: 35px;
+        width: 450px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        h1 {
+          font-size: 30px;
+        }
+        p {
+          font-family: var(--secondary-font);
+        }
+      }
+    }
+    .third-part {
+      display: flex;
+      padding: 20px 50px;
+        .contents {
+          display: flex;
+          flex-direction: column;
+          img {
+            width: 328px;
+            height: 390px;
+            object-fit: cover;
+          }
+        }
+    }
+}
