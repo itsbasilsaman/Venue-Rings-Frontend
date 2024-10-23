@@ -3,6 +3,7 @@ import React from 'react'
  import { faBars } from '@fortawesome/free-solid-svg-icons'
  import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import icon from '../assets/Images/11-removebg-preview.png'
 
 function Header() {
 
@@ -17,7 +18,7 @@ function Header() {
     <> 
      <header className='flex justify-between'>
         <div className='flex header-left'>
-          <img src="src/assets/Images/11-removebg-preview.png" alt="" />
+          <img src={icon} alt="" />
          <Link to={'/'}> <p className='logo-name'>VenueRings</p></Link>
         </div>
         <div className={displayBar ? `header-right flex active`:`header-right flex`}>
