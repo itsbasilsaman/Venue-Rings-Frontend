@@ -1,1 +1,1 @@
-export const serverUrl = 'http://localhost:4300'
+export const serverUrl = 'https://venue-rings-backend.onrender.com'
