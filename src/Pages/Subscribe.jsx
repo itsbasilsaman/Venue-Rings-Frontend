@@ -1,5 +1,4 @@
 import { useState  } from "react"
-import { AddUserInfoApi } from "../server/allApi"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
  
@@ -21,7 +20,7 @@ function Subscribe() {
 
   let emailInputHandler =(e) => {
        setUserDetails({...userDetails,email:e.target.value})
-      if(!!e.target.value.match('^[a-zA-Z!@#$%^&*(),.?":{}|<>]+$')){
+      if(!!e.target.value.match('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')){
         setCheckInvalid(true)
         console.log(checkInvalid);
       } else {
@@ -29,12 +28,11 @@ function Subscribe() {
       }
   }
 
-  let joinHandler = async ()=> {
+  let joinHandler =  ()=> {
     if(!userDetails.email.endsWith('@gmail.com')){
       setCheckInvalid(false)
     } else {
-       const result = await AddUserInfoApi(userDetails)
-       if(result.status >= 200 && result.status < 300){
+       if(userDetails){
          toast.success(`Submission complete! Thank you.`)
          setSubComplete(true)
        } else {

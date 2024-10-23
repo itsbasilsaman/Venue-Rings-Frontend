@@ -1,4 +1,5 @@
 import React from 'react'
+import MainBg from '../assets/Images/main-background.jpg'
 
 function ExpertAdvice() {
   return (
@@ -6,39 +7,16 @@ function ExpertAdvice() {
     <main className='expertadvice-page'>
       {/* head part */}
       <div className='head-part'>
-        <h1>Wedding Planning Guides</h1>
-        <p>Destination Weddings Blog</p>
+        <h1>Select Your Space</h1>
+        <p>Choose From Multiple Locations</p>
       </div>
       {/* second part */}
       <div className='second-part'>
-          <img src="src/assets/Images/main-background.jpg" alt=""/>
+          <img src= {MainBg} alt="No Image"/>
           <div className='second-title-part'>
-            <h1>Farm Weddings <br /> Abroad: Say ‘I Do’ in <br /> Rustic Elegance</h1>
-            <p>When you hear “farm wedding,” you might picture muddy fields and wellington boots—hardly the epitome of romance. But, take that concept overseas, and you’ll find…</p>
+            <h1>What venue styles<br />and locations resonate most with   your preferences?</h1>
+            <p>Explore a variety of unique spaces that cater to all styles. Whether you envision a charming outdoor garden, a sophisticated ballroom our platform helps you discover the ideal venue.</p>
           </div>
-      </div>
-      {/* third part */}
-      <div className='third-part'>
-         <div className='contents'>
-          <img src="src/assets/Images/pexels-caspersomia-27060172.jpg" alt="" />
-          <p>Featured Venues</p>
-          <h1>Mediterranean Charm at Petunia Ibiza: A Wedding Venue Like No Other</h1>
-         </div>
-         <div className='contents'>
-          <img src="src/assets/Images/pexels-amineispir-15445088.jpg" alt="" />
-          <p>Featured Venues</p>
-          <h1>Mediterranean Charm at Petunia Ibiza: A Wedding Venue Like No Other</h1>
-         </div>
-         <div className='contents'>
-          <img src="src/assets/Images/pexels-jonathanborba-3397027.jpg" alt="" />
-          <p>Featured Venues</p>
-          <h1>Mediterranean Charm at Petunia Ibiza: A Wedding Venue Like No Other</h1>
-         </div>
-         <div className='contents'>
-          <img src="src/assets/Images/pexels-gizem-celebi-516416806-19069008.jpg" alt="" />
-          <p>Featured Venues</p>
-          <h1>Mediterranean Charm at Petunia Ibiza: A Wedding Venue Like No Other</h1>
-         </div>
       </div>
     </main>
     </>
