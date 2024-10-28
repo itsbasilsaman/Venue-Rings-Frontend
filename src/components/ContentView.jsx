@@ -20,26 +20,30 @@ function ContentView( ) {
     setEvents(result.data)
   }
 
-  const countrySearchHandler =  ()=> {
-     const  country =  events.map((item)=> item.location.toLowerCase())
-     
-     console.log(country);
-     
-     
-     if(country.includes(countrySearch)){
-      console.log('yes');
-      const venuesIn = events.filter(venue => venue.location.toLowerCase().includes(countrySearch.toLowerCase()));
-      setvenuesInCountry(venuesIn);     
-      setcheckCountrySearch(true)
-     } else {
+  const countrySearchHandler = () => {
+    const country = events.map((item) => item.location.toLowerCase());
+    const countrySearchLowerCase = countrySearch.toLowerCase(); // Convert to lowercase here
+  
+    if (country.includes(countrySearchLowerCase)) {
+      const venuesIn = events.filter((venue) =>
+        venue.location.toLowerCase().includes(countrySearchLowerCase)
+      );
+      setvenuesInCountry(venuesIn);
+      setcheckCountrySearch(true);
+    } else {
       console.log('no');
-       toast.warn('Invalid country name. Please check your spelling.')
-     }
-  }
+      toast.warn('Invalid country name. Please check your spelling.');
+    }
+  };
+  
 
   console.log(events);
   
- 
+  const handleKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      countrySearchHandler();
+    }
+  };
 
   useEffect(()=> {
     getAllEvents()
@@ -54,7 +58,7 @@ function ContentView( ) {
            <div className='header-left flex'>
           <div>
              <div className='relative '>
-               <input type="text" placeholder='Enter Country' onChange={(e)=> setCountrySearch(e.target.value) }  />
+               <input type="text" placeholder='Enter Country' onChange={(e)=> setCountrySearch(e.target.value) } onKeyDown={handleKeyDown}   />
               <span className='input-content absolute font-semibold text-[18px]'>Where?</span>
               <button className='absolute input-search text-[18px]' onClick={countrySearchHandler}><FontAwesomeIcon icon={faMagnifyingGlass} /></button>
              </div>
